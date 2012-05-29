@@ -16,13 +16,8 @@
 		
 		init: function(options){
 
-            if($('.popmenu').length > 0){
-                methods.close();
-            }
-
             settings = $.extend({}, defaults, options);
 			$el = $(this);
-			
 			var el_x = $el.offset().left;
 			var el_y = $el.offset().top;
 			var el_width = $el.width();
@@ -40,9 +35,7 @@
                     func();
                 }).appendTo(menu);
 			});
-			
-			$('<div class="dialog_window_topline"></div><div class="dialog_window_bottomline"></div><div class="dialog_window_rightline"></div><div class="dialog_window_leftline"></div>').appendTo(self.menu_wrapper);
-			
+					
 			close_btn.appendTo(self.menu_wrapper);
 			arrow.appendTo(self.menu_wrapper);
 			menu.appendTo(self.menu_wrapper);
@@ -96,11 +89,11 @@
             }, 200);
 
 
-            self.menu_wrapper.on('mouseleave', function(){
-                self.menu_wrapper.delay(500).fadeOut(500, function(){
-                    self.menu_wrapper.remove();
-                });
-            });
+            // self.menu_wrapper.on('mouseleave', function(){
+            //     self.menu_wrapper.delay(500).fadeOut(500, function(){
+            //         self.menu_wrapper.remove();
+            //     });
+            // });
 		
 		},
 
